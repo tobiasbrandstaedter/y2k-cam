@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>spike: input-formats</title>
+    <link rel="stylesheet" href="../common/style.css" />
+  </head>
+  <body>
+    <h1>spike: input-formats</h1>
+    <p>
+      Targets IM-3 and offene Frage 4. Pick the same HEIC photo and the same HEVC/HDR MOV with each
+      picker. The page reports what Safari actually handed over.
+    </p>
+
+    <h2>Pickers</h2>
+    <p>
+      iOS converts photos depending on the <code>accept</code> list (first non-wildcard type wins).
+      Try all of them with the same file.
+    </p>
+    <div class="row">
+      <label
+        >A: accept="image/*,video/*"<br /><input
+          type="file"
+          data-picker="A"
+          accept="image/*,video/*"
+          multiple
+      /></label>
+    </div>
+    <div class="row">
+      <label
+        >B: accept="image/heic,image/heif,image/*"<br /><input
+          type="file"
+          data-picker="B"
+          accept="image/heic,image/heif,image/*"
+          multiple
+      /></label>
+    </div>
+    <div class="row">
+      <label
+        >C: accept="image/jpeg,image/png,image/heic"<br /><input
+          type="file"
+          data-picker="C"
+          accept="image/jpeg,image/png,image/heic"
+          multiple
+      /></label>
+    </div>
+    <div class="row">
+      <label>D: no accept<br /><input type="file" data-picker="D" multiple /></label>
+    </div>
+    <div class="row">
+      <label>E: accept="video/*"<br /><input type="file" data-picker="E" accept="video/*" /></label>
+    </div>
+    <div class="row">
+      <label
+        >F: accept="video/quicktime,video/mp4"<br /><input
+          type="file"
+          data-picker="F"
+          accept="video/quicktime,video/mp4"
+      /></label>
+    </div>
+    <div class="row">
+      <label
+        >G: camera, accept="image/*" capture="environment"<br /><input
+          type="file"
+          data-picker="G"
+          accept="image/*"
+          capture="environment"
+      /></label>
+    </div>
+    <div class="row">
+      <label
+        >H: camera, accept="video/*" capture="environment"<br /><input
+          type="file"
+          data-picker="H"
+          accept="video/*"
+          capture="environment"
+      /></label>
+    </div>
+
+    <h2>Result (last file)</h2>
+    <table id="result"></table>
+    <img id="img" alt="" hidden />
+    <video id="video" playsinline muted controls hidden></video>
+
+    <h2>Device</h2>
+    <table id="device"></table>
+    <h2>Log</h2>
+    <pre id="log"></pre>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
