@@ -280,7 +280,7 @@ export function App() {
 
   return (
     <div
-      class={`app panel-${panel} ${fullscreen ? 'fullscreen' : ''} ${dragging ? 'dragging' : ''}`}
+      class={`app panel-${panel} ${image ? '' : 'no-image'} ${fullscreen ? 'fullscreen' : ''} ${dragging ? 'dragging' : ''}`}
       onDragOver={(e) => {
         e.preventDefault();
         setDragging(true);
@@ -440,6 +440,9 @@ export function App() {
           onError={setError}
           empty={
             <div class="empty">
+              <div class="brand">
+                y2k<span>retro photo lab</span>
+              </div>
               <Icon name="image" />
               <p>Foto hierher ziehen oder auswählen</p>
               <button type="button" class="primary" onClick={() => fileInput.current?.click()}>

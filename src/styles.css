@@ -113,6 +113,22 @@ h2 {
   display: none;
 }
 
+/* before a photo is open only the import screen shows, editing controls would be dead weight */
+.app.no-image {
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+}
+
+.app.no-image .side,
+.app.no-image .mobile-tabs,
+.app.no-image .toolbar {
+  display: none;
+}
+
+.empty .brand {
+  margin-bottom: 24px;
+}
+
 .app.dragging .stage {
   outline: 2px dashed var(--accent);
   outline-offset: -12px;
