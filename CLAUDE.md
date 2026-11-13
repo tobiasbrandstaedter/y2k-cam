@@ -8,6 +8,10 @@ Private retro camera editor. Photos and videos get the look of early-2000s Digic
 - Installed to the home screen as a PWA. Must work offline after first load.
 - Everything runs on the device. No server logic, no database, no tracking, no third-party services at runtime. Static hosting only.
 
+## Verification environment
+
+There is no iPhone, no Safari and no iOS Simulator available for this project. Development and testing happen in desktop Chrome on the Windows dev machine, with mobile device emulation for layout. iOS compatibility is established from caniuse and WebKit release notes, never from memory. Every measurement names the environment it came from. Desktop numbers are not evidence for the device targets in section 8 of the vision; they show that the pipeline works and leave the iOS question open. Anything iOS-specific that could not be verified is listed as unverified, with the source relied on.
+
 ## Source of truth
 
 `PRODUKTVISION.md` is the product definition. Every requirement has an ID (IM-1, BB-4, LK-2, BS-11, EX-3, UX-7, QA-9). Reference these IDs in stories, ADRs, commits and tests so work stays traceable to the vision.
@@ -18,6 +22,7 @@ The vision is written in German and uses German domain terms. Keep them as they 
 
 ```
 PRODUKTVISION.md        product vision, owned by the user
+docs/specs/             detailed specs from the user; foto-editor.md wins over the vision for photo editing
 docs/decisions/         ADR-NNN-short-title.md, one decision per file
 docs/backlog/           user stories, one file per story, named by requirement ID
 docs/looks/             reference sheet per Look-Familie (what the real device did)

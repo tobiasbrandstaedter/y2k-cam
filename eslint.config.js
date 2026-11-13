@@ -3,7 +3,7 @@ import tseslint from 'typescript-eslint';
 import prettier from 'eslint-config-prettier';
 
 export default tseslint.config(
-  { ignores: ['dist/', 'node_modules/', 'spikes/**/*.js'] },
+  { ignores: ['dist/', 'node_modules/', 'spikes/**/*.js', 'spikes/preset-audit/baseline/'] },
   js.configs.recommended,
   ...tseslint.configs.recommended,
   prettier,

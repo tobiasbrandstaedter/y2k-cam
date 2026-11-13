@@ -1,7 +1,7 @@
 # ADR-001: Technology stack for y2k
 
 Date: 2026-11-09
-Status: proposed, pending spike results from a real iPhone (see Evidence, section "Open measurements")
+Status: proposed, pending spike results from desktop Chrome (see Evidence, section "Open measurements"). No iPhone is available to this project; the iOS measurements stay open until someone runs the spikes on a phone.
 
 ## Context
 
@@ -108,7 +108,18 @@ Chrome 152 on Windows, Intel UHD graphics, synthetic 5 s 1080p30 H.264 clip with
 - image-pipeline, synthetic 4032 x 3024 JPEG: four pass chain 9 ms at 1600 x 1200 preview, 26 ms at full 12 MP (second tap; first tap 38 and 75 ms with shader warm up), texture upload 35 to 45 ms. Canvas 2D single pass baseline at full resolution 101 ms, so four passes in JavaScript would already be around 400 ms on a desktop CPU before the phone is involved.
 - Mode B (`<video>` plus `requestVideoFrameCallback`) produced a valid MP4 but the embedded browser throttled frame callbacks to 1 per second while its pane was in the background. That is an artefact of the test environment, not of the approach. The phone runs the page in the foreground.
 
+### Spike results in desktop Chrome, 2026-11-09 (full protocol in `docs/testing/spike-protocol.md`)
+
+Chrome 152 on Windows 11, synthetic media generated in the page, browser pane hidden during the runs.
+
+- video-export Mode A, 30 s 1080p30 H.264 with AAC: 894 frames in 32.2 s, ratio 1.07, 27.8 fps, audio passed through, 29.2 MB output. Same clip at 720p: 10.9 s, ratio 0.37, 81.7 fps. The GL effect costs 0.3 ms per frame in both runs, so the 1080p encoder is the bottleneck. A phone encoder will not beat this desktop; 1080p export on a three year old iPhone will very likely miss QA-4. Working assumption until someone measures on a phone: 720p is the default export size (EX-3), 1080p stays selectable.
+- image-pipeline, 12.2 MP JPEG: four pass WebGL2 chain 15 to 21 ms at preview resolution (long edge 1600), 28 to 44 ms at full resolution, Canvas 2D single pass 105 ms. QA-2 has a margin of about 25x on desktop. Confirmed as the approach.
+- input-formats: JPEG and H.264 MP4 run through the inspection path. HEIC, HEVC and HDR could not be produced on desktop and stay open.
+- Preview test and Mode B did not run: they need a visible video element, the pane was hidden.
+
 ### Open measurements that confirm or overturn the pending decisions
+
+The thresholds below were written for a run on a real iPhone. The project decided on 2026-11-09 not to test on a device. The spikes therefore run in desktop Chrome, and the rule for reading the numbers is: a desktop result that misses a threshold overturns the decision; a desktop result that passes only shows the approach works and leaves the iOS question open. Decisions that depend purely on Safari behaviour (HEIC delivery, HEVC decode, share sheet) cannot be settled here and rest on the sources in the capability table.
 
 | Decision                                                         | Confirmed if                                                                                                                 | Overturned if, and then what                                                                                                                                                                                                                                                                                                |
 | ---------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
