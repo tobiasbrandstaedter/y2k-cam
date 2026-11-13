@@ -29,7 +29,7 @@ It is the most recognized trait of the whole era. Formats, colors and positions 
 
 ## Performance and video
 
-- QA-2: tapping a Look on a 12 MP photo shows the result in under 0.5 s on a three year old iPhone. Measure on device, not on your laptop. Preview can run at reduced resolution as long as export uses full resolution and looks the same.
+- QA-2: tapping a Look on a 12 MP photo shows the result in under 0.5 s on a three year old iPhone. There is no iPhone to measure on; measure in desktop Chrome, label the number as desktop, and leave generous headroom because the phone will be several times slower. Preview can run at reduced resolution as long as export uses full resolution and looks the same.
 - Every Baustein you write will also run per frame on video (LA-4). Motion-dependent Bausteine (Tracking-Störung, Rauschen, Interlacing) need a frame index or time input so they animate instead of repeating a static pattern. Coordinate the interface with the video agent before finalizing it.
 
 ## Boundaries

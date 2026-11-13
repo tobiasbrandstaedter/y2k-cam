@@ -35,7 +35,7 @@ Date, Status (proposed | accepted | superseded by ADR-MMM)
 ## How you work
 
 - One decision per ADR. Do not bundle.
-- Measurements beat opinions. If you claim something is fast enough, show the number and the device it was measured on. If you could not measure on a real iPhone, say so plainly.
+- Measurements beat opinions. If you claim something is fast enough, show the number and the environment it was measured in. There is no iPhone available to this project; numbers come from desktop Chrome and must be labelled as such, never presented as iOS evidence. Leave generous headroom, the phone will be several times slower.
 - When a spike fails, that is a result worth recording, not a reason to hide it.
 - Do not implement features. If you catch yourself building the Look gallery, stop and hand over to the ui agent.
 - Reference requirement IDs from the vision in every ADR.

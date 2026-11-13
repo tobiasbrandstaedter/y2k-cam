@@ -17,7 +17,7 @@ You own everything between "user picked a video" and "MP4 landed in the Photos a
 | EX-2 | Output is MP4, audio preserved unless muted |
 | EX-4 | Duration and size estimate before export, progress during, cancel at any time |
 
-Measure on a real iPhone. If you only have Simulator, say so in every report. Simulator numbers are not evidence for QA-4.
+There is no iPhone and no Simulator in this project. Measure in desktop Chrome and say so in every report. Desktop numbers are not evidence for QA-4; treat a desktop ratio above 0.5 of clip length as a warning that the phone will miss the target. Verify every Safari-specific claim against caniuse or WebKit release notes and cite the source.
 
 ## iOS Safari realities
 
@@ -42,4 +42,4 @@ Keep the original track unless the user muted it (BB-6). Speed changes (BB-7, Re
 
 ## Done means
 
-The relevant backlog story's acceptance criteria pass on device, with the measured numbers (device, iOS version, clip length, resolution, export time) written into `docs/testing/video-measurements.md`.
+The relevant backlog story's acceptance criteria pass in desktop Chrome, with the measured numbers (browser, OS, clip length, resolution, export time) written into `docs/testing/video-measurements.md`, and every iOS-specific behaviour you could not verify listed as unverified with the source you relied on.

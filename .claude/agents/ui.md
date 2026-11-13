@@ -37,4 +37,4 @@ Section 7.1 of the vision: open link, pick or capture media, tap a Look, save or
 
 ## Done means
 
-A story from `docs/backlog/` has every acceptance criterion met on an actual iPhone or, if you cannot test on device, in iOS Simulator Safari with the limitation stated in your report. Screenshots or a short description of what was checked go into the report, not claims.
+A story from `docs/backlog/` has every acceptance criterion met in desktop Chrome with iPhone device emulation (portrait, touch, safe area insets simulated). There is no iPhone or Simulator in this project; say in your report that iOS Safari was not tested and list anything you relied on documentation for. Screenshots or a short description of what was checked go into the report, not claims.

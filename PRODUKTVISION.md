@@ -225,6 +225,8 @@ Zielzeit vom Öffnen bis zum gespeicherten Foto: **unter 30 Sekunden** für jema
 
 Messbare Ziele, an denen die Umsetzung gemessen wird. Alle Werte gelten für ein Mittelklasse-Smartphone, das zum Zeitpunkt der Veröffentlichung etwa drei Jahre alt ist.
 
+Zum Testen steht kein iPhone zur Verfügung. Gemessen wird in Chrome auf dem Entwicklungs-PC, die Werte unten sind dort Richtwerte: Was auf dem PC schon knapp ist, wird auf dem Telefon zu langsam sein. iOS-Verträglichkeit wird aus Dokumentation (caniuse, WebKit-Release-Notes) abgeleitet, nicht gemessen. Jede Messung nennt ihre Umgebung.
+
 | ID | Qualitätsmerkmal | Ziel |
 |---|---|---|
 | QA-1 | Erster Start | App ist in unter 3 Sekunden bedienbar (bei mobiler Verbindung). Folgestarts in unter 1 Sekunde. |
@@ -294,6 +296,7 @@ Es gibt keine Nutzungsstatistik (siehe QA-7), also auch keine Kennzahlen. Stattd
 - Lokale Verarbeitung ist auf aktuellen Smartphones für Fotos und kurze Videos in 1080p realistisch. Diese Annahme ist früh durch einen technischen Durchstich zu prüfen (siehe offene Fragen).
 - Die App wird auf einer eigenen Adresse gehostet, die nur im Freundeskreis bekannt ist. Es gibt keinen Betrieb im eigentlichen Sinn: keine Server-Logik, keine Datenbank, nichts, was gewartet werden muss.
 - Kosten sollen bei null oder nahe null liegen (statisches Hosting).
+- Es gibt kein iPhone zum Testen während der Entwicklung. Entwickelt und geprüft wird in Chrome auf dem PC, iOS-Verhalten wird aus Dokumentation abgeleitet. Die erste Probe auf einem echten Gerät findet statt, wenn die App fertig genug ist, um sie einfach zu benutzen. Bis dahin bleiben die Gerätemessziele unbestätigt.
 
 ### Offene Fragen
 

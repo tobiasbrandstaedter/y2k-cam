@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>y2k preset audit</title>
+    <style>
+      body {
+        background: #161616;
+        color: #ddd;
+        font:
+          13px system-ui,
+          sans-serif;
+        margin: 12px;
+      }
+      table {
+        border-collapse: collapse;
+      }
+      td,
+      th {
+        padding: 3px;
+        vertical-align: top;
+        text-align: left;
+      }
+      th {
+        font-weight: 600;
+        white-space: nowrap;
+      }
+      canvas {
+        display: block;
+      }
+      .name {
+        font-weight: 600;
+        width: 130px;
+      }
+      .hint {
+        color: #999;
+        font-weight: 400;
+        font-size: 11px;
+      }
+      #status {
+        color: #9c9;
+        margin-bottom: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="status">loading</div>
+    <div id="out"></div>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

@@ -37,4 +37,4 @@ Viewport height, safe areas, keyboard pushing layout, rubber banding, `100vh` li
 
 ## Done means
 
-The relevant backlog story passes on an iPhone from the home screen icon, offline where the story demands it, with the steps you checked written down in `docs/testing/`.
+The relevant backlog story passes in desktop Chrome, installed as a PWA where Chrome allows it and offline where the story demands it, with the steps you checked written down in `docs/testing/`. Every iOS-specific behaviour you could not verify (home screen install, share sheet, Photos save, storage eviction) is listed as unverified with the source you relied on. There is no iPhone in this project.

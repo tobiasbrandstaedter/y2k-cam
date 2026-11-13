@@ -32,7 +32,7 @@ Open questions, references to the vision (section and ID), related Look referenc
 
 ## Rules for acceptance criteria
 
-- Every criterion must be checkable on an iPhone without reading code. "Works correctly" is not a criterion. "Tapping a Look updates the preview within 0.5 s on a 12 MP photo (QA-2)" is.
+- Every criterion must be checkable in a browser without reading code, in desktop Chrome with iPhone emulation today and on a phone later. Criteria that can only be checked on iOS (home screen install, share sheet) are marked "iOS only". "Works correctly" is not a criterion. "Tapping a Look updates the preview within 0.5 s on a 12 MP photo (QA-2)" is.
 - Pull measurable targets from section 8 of the vision whenever they apply, and cite the QA ID.
 - For Look stories (LK-*), the criteria are the prägende Merkmale listed in the vision table plus the informal comparison test (QA-9). Do not soften them.
 - For video, every story states what happens with audio and with the 3 minute / 1080p limit (QA-5).
