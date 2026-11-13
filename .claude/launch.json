@@ -19,6 +19,18 @@
       "runtimeExecutable": "pnpm",
       "runtimeArgs": ["spikes:http"],
       "port": 5180
+    },
+    {
+      "name": "preset-audit",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": ["exec", "vite", "--config", "spikes/preset-audit/vite.config.ts"],
+      "port": 5182
+    },
+    {
+      "name": "preview",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": ["preview"],
+      "port": 4173
     }
   ]
 }
