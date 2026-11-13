@@ -31,6 +31,8 @@ body {
   color: var(--text);
   overflow: hidden;
   overscroll-behavior: none;
+  /* kills double tap zoom on iOS, pinch still works where an element allows it */
+  touch-action: manipulation;
 }
 
 button,
